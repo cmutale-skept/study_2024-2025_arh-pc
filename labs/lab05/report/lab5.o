@@ -1,0 +1,238 @@
+<h1 class="TOC-Heading" id="содержание">Содержание</h1>
+<p><a href="#цель-работы">1 Цель работы <span>1</span></a></p>
+<p><a href="#задание">2 Задание <span>1</span></a></p>
+<p><a href="#выполнение-лабораторной-работы">3 Выполнение лабораторной
+работы <span>1</span></a></p>
+<p><a href="#выполнение-заданий-для-самостоятельной-работы">4 Выполнение
+заданий для самостоятельной работы <span>7</span></a></p>
+<p><a href="#выводы">5 Выводы <span>11</span></a></p>
+<p><a href="#список-литературы">6 Список литературы
+<span>11</span></a></p>
+<h1 id="цель-работы">1 Цель работы</h1>
+<p>Приобретение практических навыков работы в Midnight Commander.
+Освоение инструкций языка ассемблера mov и int.</p>
+<h1 id="задание">2 Задание</h1>
+<ol type="1">
+<li>Основы работы с mc</li>
+<li>Подключение внешнего файла</li>
+</ol>
+<h1 id="выполнение-лабораторной-работы">3 Выполнение лабораторной
+работы</h1>
+<p><strong>Основы работы с mc</strong></p>
+<p>Открываю Midnight Commander, введя в терминал mc:</p>
+<p><img src="media/image1.png"
+style="width:3.2971in;height:2.65528in" /></p>
+<p>Рис 1</p>
+<p>Перехожу в каталог ~/work/arch-pc/, используя файловый менеджер
+mc:</p>
+<p><img src="media/image2.png"
+style="width:3.87633in;height:0.97063in" /></p>
+<p>Рис 2</p>
+<p>С помощью F7 создаю каталог lab05:</p>
+<p><img src="media/image3.png"
+style="width:2.98512in;height:1.55077in" /></p>
+<p>Рис 3</p>
+<p><img src="media/image4.png" title="fig:"
+style="width:4.08333in;height:0.76981in" alt="Рис 4" /></p>
+<p>Рис 4</p>
+<p>Пользуясь строкой ввода и командой touch создаю файл lab5-1.asm:</p>
+<p><img src="media/image5.png"
+style="width:2.94802in;height:0.31281in" /></p>
+<p>Рис 5</p>
+<p><img src="media/image6.png"
+style="width:4.08333in;height:0.76152in" /></p>
+<p>Рис 6</p>
+<p>С помощью функциональной клавиши F4 открою файл lab5-1.asm для
+редактирования в nano:</p>
+<p><img src="media/image7.png"
+style="width:2.98357in;height:1.06133in" /></p>
+<p>Рис 7</p>
+<p>Ввожу в файл код программы для запроса строки у пользователя:</p>
+<p><img src="media/image8.png"
+style="width:4.08333in;height:2.9212in" /></p>
+<p>Рис 8</p>
+<p>С помощью функциональной клавиши F3 открываю файл для просмотра,
+чтобы проверить, что файл содержит текст программы:</p>
+<p><img src="media/image9.png"
+style="width:4.08333in;height:3.04487in" /></p>
+<p>Рис 9</p>
+<p>Транслирую текст программы файла в объектный файл командой nasm -f
+elf lab5-1.asm:</p>
+<p><img src="media/image10.png"
+style="width:3.54707in;height:0.36867in" /></p>
+<p>Рис 10</p>
+<p>Выполняю компоновку объектного файла с помощью команды ld -m elf_i386
+-o lab5-1 lab5-1.o:</p>
+<p><img src="media/image11.png"
+style="width:3.26684in;height:0.36867in" /></p>
+<p>Рис 11</p>
+<p>Я запускаю получившийся исполняемый файл:</p>
+<p><img src="media/image11.png"
+style="width:3.26684in;height:0.36867in" /></p>
+<p>Рис 12</p>
+<p>Программа выводит строку “Введите строку:” и ждет ввода с клавиатуры,
+я ввожу мои ФИО:</p>
+<p><img src="media/image12.png"
+style="width:1.69589in;height:0.36867in" /></p>
+<p>Рис 13</p>
+<p><strong>Подключение внешнего файла in_out.asm</strong></p>
+<p>Скачиваю файл in_out.asm со страницы курса в ТУИС:</p>
+<p><img src="media/image13.png" title="fig:"
+style="width:4.08333in;height:0.72059in" alt="Рис 14" /></p>
+<p>Рис 14</p>
+<p>С помощью функциональной клавиши F5 копирую файл in_out.asm из
+каталога Downloads в каталог lab05. Потом копирую файл lab5-1.asm в тот
+же каталог, но с другим именем (lab5-2.asm) :</p>
+<p><img src="media/image14.png" title="fig:"
+style="width:4.08333in;height:1.58035in" alt="Рис 15" /></p>
+<p>Рис 15</p>
+<p><img src="media/image15.png" title="fig:"
+style="width:4.08333in;height:1.70197in" alt="Рис 16" /></p>
+<p>Рис 16</p>
+<p>Изменяю содержимое файла lab5-2.asm в редакторе nano, чтобы в
+программе использовались подпрограммы из внешнего файла in_out.asm (и
+также использую подпрограммы sprintLF, sread и quit):</p>
+<p><img src="media/image16.png"
+style="width:3.24174in;height:2.35999in" /></p>
+<p>Рис 17</p>
+<p>Я транслирую текст программы файла в объектный файл командой nasm -f
+elf lab5-2.asm и выполняю я компоновку объектного файла с помощью
+команды ld -m elf_i386 -o lab5-2 lab5-2.o. Я запускаю получившийся
+исполняемый файл. Программа выводит строку “Введите строку” и ждет ввода
+с клавиатуры:</p>
+<p><img src="media/image17.png"
+style="width:3.29315in;height:0.37879in" /></p>
+<p>Рис 18</p>
+<p>Я ввожу мои ФИО:</p>
+<p><img src="media/image17.png"
+style="width:3.65319in;height:0.73647in" /></p>
+<p>Рис 19</p>
+<p>В файле lab5-2.asm заменяю подпрограмму sprintLF на sprint,
+транслирую и запускаю получившийся исполняемый файл:</p>
+<p><img src="media/image18.png"
+style="width:3.51622in;height:2.5014in" /></p>
+<p>Рис 20</p>
+<p><img src="media/image17.png"
+style="width:3.41716in;height:0.49242in" /></p>
+<p>Рис 21</p>
+<p>Разница в том, что после строки “Введите строку” нет дополнительной
+строки:</p>
+<p><img src="media/image19.png"
+style="width:1.87701in;height:0.3784in" /></p>
+<p>Рис 22</p>
+<h1 id="выполнение-заданий-для-самостоятельной-работы">4 Выполнение
+заданий для самостоятельной работы</h1>
+<p>Создаю копию файла lab5-1.asm с именем lab5-1-0.asm с помощью клавиши
+F5:</p>
+<p><img src="media/image20.png" title="fig:"
+style="width:4.08333in;height:1.51923in" alt="Рис 23" /></p>
+<p>Рис 23</p>
+<p>С помощью клавиши F4, открываю созданный файл для редактирования в
+nano. Изменяю программу так, чтобы кроме вывода приглашения и запроса
+ввода, она выводила вводимую пользователем строку:</p>
+<p><img src="media/image8.png"
+style="width:4.08333in;height:2.9212in" /></p>
+<p>Рис 24</p>
+<p>Код программы:</p>
+<pre><code>SECTION .data
+msg: DB &#39;Введите строку&#39;, 10
+
+msgLen: EQU $-msg
+
+SECTION .bss
+buf1: RESB 80
+
+SECTION .text
+GLOBAL _start
+ _start:
+
+mov eax,4
+mov ebx,1
+mov ecx,msg
+mov edx,msgLen
+int 80h
+
+mov eax,3
+mov ebx,0
+mov ecx,buf1
+mov edx,80
+int 80h
+
+mov eax,4
+mov ebx,1
+mov ecx,buf1
+mov edx,buf1
+int 80h
+
+mov eax,1
+mov ebx,0
+int 80h</code></pre>
+<p>Я транслирую и запускаю получившийся исполняемый файл:</p>
+<p><img src="media/image10.png"
+style="width:4.08333in;height:0.42441in" /></p>
+<p>Рис 25</p>
+<p><img src="media/image11.png"
+style="width:3.65237in;height:0.41218in" /></p>
+<p>Рис 26</p>
+<p><img src="media/image21.png"
+style="width:4.08333in;height:0.34377in" /></p>
+<p>Рис 27</p>
+<p>Программа запрашивает ввод, ввожу мои ФИО, далее программа выводит
+введенные данные:</p>
+<p><img src="media/image12.png"
+style="width:3.07171in;height:0.66776in" /></p>
+<p>Рис 28</p>
+<p>Создаю копию файла lab5-2.asm с именем lab5-2-1.asm с помощью
+функциональной клавиши F5 и открываю созданный файл для редактирования.
+Изменяю программу так, чтобы кроме вывода приглашения и запроса ввода,
+она выводила вводимую пользователем строку:</p>
+<p><img src="media/image16.png"
+style="width:3.68041in;height:2.67934in" /></p>
+<p>Рис 29</p>
+<p>Код программы:</p>
+<pre><code>%include &#39;in_out.asm&#39;
+SECTION .data
+msg: DB &#39;Введите строку&#39;, 10
+
+msgLen: EQU $-msg
+
+SECTION .bss
+buf1: RESB 80
+
+SECTION .text
+GLOBAL _start
+ _start:
+
+mov eax,msg
+call sprint
+
+mov ecx,buf1
+mov edx,80
+
+call sread
+mov eax,4
+mov ebx,1
+mov ecx,buf1
+int 80h
+call quit</code></pre>
+<p>Я транслирую и запускаю получившийся исполняемый файл:</p>
+<p><img src="media/image22.png"
+style="width:3.18585in;height:0.33562in" /></p>
+<p>Рис 30</p>
+<p><img src="media/image11.png"
+style="width:2.97392in;height:0.33562in" /></p>
+<p>Рис 31</p>
+<p><img src="media/image21.png"
+style="width:4.08333in;height:0.34377in" /></p>
+<p>Рис 32</p>
+<p><img src="media/image23.png"
+style="width:2.0849in;height:0.67255in" /></p>
+<p>Рис 33</p>
+<h1 id="выводы">5 Выводы</h1>
+<p>При выполнении данной лабораторной работы я приобрела практические
+навыки работы в Midnight Commander, а также освоила инструкции языка
+ассемблера mov и int.</p>
+<h1 id="список-литературы">6 Список литературы</h1>
+<p><a
+href="https://esystem.rudn.ru/pluginfile.php/2089085/mod_resource/content/0/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%E2%84%965.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20Midnight%20Commander%20%28%29.%20%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%BD%D0%B0%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5%20%D0%B0%D1%81%D1%81%D0%B5%D0%BC%D0%B1%D0%BB%D0%B5%D1%80%D0%B0%20NASM.%20%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B5%20%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D1%8B%20%D0%B2%20%D0%9E%D0%A1%20GNU%20Linux.pdf">Архитектура
+ЭВМ</a></p>
