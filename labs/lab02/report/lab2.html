@@ -1,0 +1,203 @@
+<h1 class="TOC-Heading" id="содержание">Содержание</h1>
+<p><a href="#цель-работы">0.1 Цель работы [1](#цель-работы)</a></p>
+<p><a href="#задание">0.2 Задание [1](#задание)</a></p>
+<p><a href="#выполнение-лабораторной-работы">0.3 Выполнение лабораторной
+работы [1](#выполнение-лабораторной-работы)</a></p>
+<p><a href="#выполнение-заданий-для-самостоятельной-работы">0.4
+Выполнение заданий для самостоятельной работы
+[9](#выполнение-заданий-для-самостоятельной-работы)</a></p>
+<p><a href="#выводы">0.5 Выводы [11](#выводы)</a></p>
+<p><a href="#источники">0.6 Источники [11](#источники)</a></p>
+<h2 id="цель-работы">0.1 Цель работы</h2>
+<p>Целью работы является изучить идеологию и применение средств контроля
+версий. Приобрести практические навыки по работе с системой git.</p>
+<h2 id="задание">0.2 Задание</h2>
+<ol type="1">
+<li><p>Настройка GitHub.</p></li>
+<li><p>Базовая настройка Git.</p></li>
+<li><p>Создание SSH-ключа.</p></li>
+<li><p>Создание рабочего пространства и репозитория курса на основе
+шаблона.</p></li>
+<li><p>Создание репозитория курса на основе шаблона.</p></li>
+<li><p>Настройка каталога курса.</p></li>
+</ol>
+<h2 id="выполнение-лабораторной-работы">0.3 Выполнение лабораторной
+работы</h2>
+<p>3.1. Настройка GitHub</p>
+<p>Создаю учетную запись на сайте GitHub. Далее я заполнила основные
+данные учетной записи:</p>
+<p><img src="media/image1.png"
+style="width:3.22913in;height:1.40397in" /></p>
+<p>Рис 3.1.0</p>
+<p><img src="media/image2.png"
+style="width:2.21041in;height:2.54173in" /></p>
+<p>Рис 3.1.1</p>
+<p>3.2. Базовая настройка Git</p>
+<p>Открываю терминал и устанавливаю git с помощью sudo apt-get install
+git:</p>
+<p><img src="media/image3.png"
+style="width:3.28725in;height:2.56975in" /></p>
+<p>Рис 3.2.0</p>
+<p>Потом делаю предварительную конфигурацию git. Ввожу команду git
+config –global user.name ““, указывая свое имя и команду git config
+–global user.email”work@mail“, указывая в ней электронную почту мою:</p>
+<p><img src="media/image4.png"
+style="width:2.9408in;height:0.47765in" /></p>
+<p>Рис 3.2.1</p>
+<p>Настраиваю utf-8 в выводе сообщений git и Задаю имя «master» для
+начальной ветки:</p>
+<p><img src="media/image5.png"
+style="width:2.267in;height:0.48073in" /></p>
+<p>Рис 3.2.2</p>
+<p>Задаю параметр autocrlf со значением input и параметр safecrlf со
+значением warn:</p>
+<p><img src="media/image6.png"
+style="width:2.19274in;height:0.48073in" /></p>
+<p>Рис 3.2.3</p>
+<p>3.3. Создание SSH-ключа</p>
+<p>Для последующей идентификации пользователя на сервере репозиториев
+необходимо сгенерировать пару ключей (приватный и открытый). Для этого
+использую команду ssh-keygen -C “Имя , work@email”:</p>
+<p><img src="media/image7.png"
+style="width:4.90684in;height:3.59265in" /></p>
+<p>Рис 3.3.0</p>
+<p>Xclip команд который помагает скопировать любой текст через терминал.
+Устанавливаю xclip с помощью команды sudo apt install xclip:</p>
+<p><img src="media/image8.png"
+style="width:5.40201in;height:2.96814in" /></p>
+<p>Рис 3.3.1</p>
+<p>Копирую открытый ключ из директории, в которой он был сохранен, с
+помощью xclip:</p>
+<p><img src="media/image9.png"
+style="width:4.24167in;height:0.85903in" /></p>
+<p>Рис 3.3.2</p>
+<p>Открываю браузер, захожу на сайт GitHub. Открываю свой профиль и
+выбираю страницу «SSH and GPG keys». Нажимаю кнопку «New SSH key».
+Вставляю скопированный ключ в поле «Key». В поле Title указываю имя для
+ключа. Нажимаю «Add SSH-key», чтобы завершить добавление ключа:</p>
+<p><img src="media/image10.png"
+style="width:5.75354in;height:1.80398in" /></p>
+<p>Рис 3.3.3</p>
+<p><em>3.4. Создание рабочего пространства и репозитория курса на основе
+шаблона</em></p>
+<p>Создаю директорию, рабочее пространство, с помощью mkdir. Проверяю с
+помощью ls, действительно ли были созданы каталоги:</p>
+<p><img src="media/image11.png"
+style="width:4.70455in;height:0.94534in" /></p>
+<p>Рис 3.4.0</p>
+<p>3.5. Создание репозитория курса на основе шаблона</p>
+<p>Перехожу на станицу репозитория с шаблоном курса и выбираю «Use this
+template»:</p>
+<figure>
+<img src="media/image12.png" title="fig:"
+style="width:5.83333in;height:1.51358in" alt="Рис 3.5.0" />
+<figcaption aria-hidden="true">Рис 3.5.0</figcaption>
+</figure>
+<p>Рис 3.5.0</p>
+<p>В открывшемся окне задаю имя репозитория (Repository name):
+study1_2023–2024_arhpc и создаю репозиторий, нажимаю на кнопку «Create
+repository from template»:</p>
+<p><img src="media/image13.png"
+style="width:5.83333in;height:0.88608in" /></p>
+<p>Рис 3.5.1</p>
+<p>Через терминал перехожу в созданный каталог курса с помощью cd:</p>
+<p><img src="media/image14.png"
+style="width:3.11111in;height:0.78333in" /></p>
+<p>Рис 3.5.2</p>
+<p>Клонирую созданный репозиторий с помощью команды git clone --
+recursive git@github.com:/study_2023–2024_arh-pc.git arch-pc:</p>
+<p><img src="media/image15.png"
+style="width:5.30046in;height:1.91683in" /></p>
+<p>Рис 3.5.3</p>
+<p>3.6. Настройка каталога курса</p>
+<p>Перехожу в каталог arch-pc с помощью cd:</p>
+<p><img src="media/image16.png"
+style="width:3.85in;height:0.75in" /></p>
+<p>Рис 3.6.0</p>
+<p>Удаляю package.json с помощью rm:</p>
+<p><img src="media/image17.png"
+style="width:5.83333in;height:0.44573in" /></p>
+<p>Рис 3.6.1</p>
+<p>Создаю необходимые каталоги с помощью echo:</p>
+<p><img src="media/image18.png"
+style="width:3.85in;height:0.61667in" /></p>
+<p>Рис 3.6.2</p>
+<p>Отправляю созданные каталоги на сервер с git add ., git commit и git
+push:</p>
+<p><img src="media/image19.png"
+style="width:5.81048in;height:2.96024in" /></p>
+<p>Рис 3.6.3</p>
+<p><img src="media/image20.png"
+style="width:5.67183in;height:1.76784in" /></p>
+<p>Рис 3.6.4</p>
+<p>Проверяю правильность выполнения работы в локальном репозетории и на
+GitHub:</p>
+<p><img src="media/image21.png"
+style="width:5.19527in;height:1.12869in" /></p>
+<p>Рис 3.6.5</p>
+<p>v<img src="media/image22.png"
+style="width:5.51584in;height:2.86667in" /></p>
+<p>Рис 3.6.6</p>
+<h2 id="выполнение-заданий-для-самостоятельной-работы">0.4 Выполнение
+заданий для самостоятельной работы</h2>
+<p>4.1. Перехожу в директорию labs/lab02/report с помощью cd. Создаю в
+каталоге файл для отчета по второй лабораторной работе с помощью
+touch:</p>
+<p><img src="media/image23.png"
+style="width:4.98722in;height:0.47936in" /></p>
+<p>Рис 4.1.0</p>
+<p>Оформить отчет я смогу с помощью текстового редактора LibreOffice
+Writer. Захожу в файл, который создала и выбираю Open With Other
+Application, LibreOffice Writer, а потом создаю отчет lab2 (позже
+сохраню его как lab2.odt):</p>
+<figure>
+<img src="media/image24.png" title="fig:"
+style="width:4.41338in;height:1.75197in" alt="Рис 4.1.1" />
+<figcaption aria-hidden="true">Рис 4.1.1</figcaption>
+</figure>
+<p>Рис 4.1.1</p>
+<figure>
+<img src="media/image25.png" title="fig:"
+style="width:5.05079in;height:1.59252in" alt="Рис 4.1.2" />
+<figcaption aria-hidden="true">Рис 4.1.2</figcaption>
+</figure>
+<p>Рис 4.1.2</p>
+<figure>
+<img src="media/image26.png" title="fig:"
+style="width:4.55984in;height:1.89449in" alt="Рис 4.1.3" />
+<figcaption aria-hidden="true">Рис 4.1.3</figcaption>
+</figure>
+<p>Рис 4.1.3</p>
+<p>4.2. Надо скопировать отчеты по выполнению предыдущих лабораторных
+работ в соответствующие каталоги созданного рабочего пространства. Для
+этого использую cp и копирую из Downloads в соответствующий каталог
+созданного рабочего пространства и проверяю с ls:</p>
+<p><img src="media/image27.png"
+style="width:4.00833in;height:1.19167in" /></p>
+<p>Рис 4.2.0</p>
+<p>4.3. Добавляю с помощью команды git add в созданные файлы:</p>
+<p><img src="media/image28.png"
+style="width:3.95389in;height:0.7748in" /></p>
+<p>Рис 4.3.0</p>
+<p><img src="media/image29.png"
+style="width:5.83333in;height:0.60784in" /></p>
+<p>Рис 4.3.1</p>
+<p>Сохраняю изменения с помощью git commit:</p>
+<p><img src="media/image30.png"
+style="width:5.35477in;height:0.88667in" /></p>
+<p>Рис 4.3.2</p>
+<p>Отправляю в центральный репозиторий сохраненные изменения командой
+git push -f origin master:</p>
+<p><img src="media/image31.png"
+style="width:5.28174in;height:1.47in" /></p>
+<p>Рис 4.3.3</p>
+<h2 id="выводы">0.5 Выводы</h2>
+<pre><code>При выполнении данной лабораторной работы я изучила идеологию и
+применение средств контроля версий, а также приобрела практические
+навыки по работе с системой git.</code></pre>
+<h2 id="источники">0.6 Источники</h2>
+<p><a
+href="https://esystem.rudn.ru/pluginfile.php/2089082/mod_resource/content/0/Лабораторная%20работа%20№2.%20Система%20контроля%20версий%20Git.pdf"><em>Архитектура
+ЭВМ</em></a></p>
+<p><a
+href="https://glebradchenko.susu.ru/courses/bachelor/engineering/2016/SUSU_SE_2016_REP_3_VCS.pdf"><em>glebradchenko</em></a></p>
