@@ -1,0 +1,123 @@
+<h1 class="TOC-Heading" id="содержание">Содержание</h1>
+<p><a href="#цель-работы">1 Цель работы <span>1</span></a></p>
+<p><a href="#выполнение-лабораторной-работы">2 Выполнение лабораторной
+работы <span>1</span></a></p>
+<p><a href="#выполнение-самостоятельной-работы">3 Выполнение
+самостоятельной работы <span>3</span></a></p>
+<p><a href="#выводы">4 Выводы <span>5</span></a></p>
+<p><a href="#список-литературы">5 Список литературы
+<span>5</span></a></p>
+<h1 id="цель-работы">1 Цель работы</h1>
+<p>Приобретение навыков написания программ для работы с файлами.</p>
+<h1 id="выполнение-лабораторной-работы">2 Выполнение лабораторной
+работы</h1>
+<p>Создаю каталог для программ лабораторной работы № 10, перехожу в него
+и создаю файлы lab10-1.asm, readme-1.txt и readme-2.txt:</p>
+<p><img src="media/image1.png"
+style="width:5.16667in;height:2.83333in" /></p>
+<p>рис 1</p>
+<p>Ввожу в файл lab10-1.asm текст программы (Программа записи в файл
+сообщения):</p>
+<p><img src="media/image2.png" title="fig:"
+style="width:4.08333in;height:5.93622in" alt="рис 2" /></p>
+<p>рис 2</p>
+<p>Создаю исполняемый файл и проверяю его работу:</p>
+<p><img src="media/image3.png"
+style="width:4.46667in;height:1.375in" /></p>
+<p>рис 3</p>
+<p><img src="media/image4.png"
+style="width:3.80833in;height:0.7in" /></p>
+<p>рис 4</p>
+<p>С помощью chmod изменяю права доступа к файлу lab10-1, запретив его
+выполнение(u-x). При запуске, получаю сообщение “Persmission denied”
+(отказано в разрешении):</p>
+<p><img src="media/image5.png"
+style="width:3.04167in;height:1.11667in" /></p>
+<p>рис 5</p>
+<p>С помощью chmod изменяю права доступа к файлу lab10-1.asm с исходным
+текстом программы, добавляя права на исполнение(u+x), и проверяю с
+помощью ls -l:</p>
+<p><img src="media/image6.png" style="width:4.625in;height:1.5in" /></p>
+<p>рис 6</p>
+<p>При исполнении, программа изменяет доступ к файлу lab10-1. При
+запуске, программа добавляет введенный текст к старому введенному
+тексту, именно поэтому мы видим две строки:</p>
+<p><img src="media/image7.png"
+style="width:4.14167in;height:1.96667in" /></p>
+<p>рис 7</p>
+<p>В соответствии с вариантом 10, устанавливаю права доступа к файлу
+readme1.txt в символьном виде(r– r– rwx), а для файла readme-2.txt – в
+восмеричном виде(447). Проверяю правильность выполнения с помощью
+команды ls -l:</p>
+<p><img src="media/image8.png"
+style="width:3.825in;height:2.25in" /></p>
+<p>рис 8</p>
+<h1 id="выполнение-самостоятельной-работы">3 Выполнение самостоятельной
+работы</h1>
+<p>Создаю файл task10.asm и в него пишу текст программы:</p>
+<p><img src="media/image9.png"
+style="width:4.76667in;height:1.24167in" /></p>
+<p>рис 9</p>
+<p><img src="media/image10.png" title="fig:"
+style="width:4.08333in;height:4.17295in" alt="рис 10" /></p>
+<p>рис 10</p>
+<p>Создаю исполняемый файл. Программа выводит приглашения “Как Вас
+зовут?”, вводится с клавиатуры свои фамилию и имя, создает файл с именем
+name.txt, записывает в файл сообщение “Меня зовут”, допишет в файл
+строку введенную с клавиатуры и закрывает файл:</p>
+<p><img src="media/image11.png"
+style="width:4.84167in;height:1.90833in" /></p>
+<p>рис 11</p>
+<p><img src="media/image12.png" style="width:4.80208in;height:1.17491in"
+alt="Изображение выглядит как текст, Шрифт, снимок экрана, Графика" /></p>
+<p>рис 12</p>
+<p>Код программы:</p>
+<pre><code>%include &#39;in_out.asm&#39;
+
+SECTION .data
+one: db &#39;Как Вас зовут?&#39;,0
+filename: db &quot;name.txt&quot;, 0
+msg: db &#39;Меня зовут &#39;
+theLength: equ $-msg
+
+SECTION .bss
+name: resb 64
+
+SECTION .text
+global _start
+
+_start:
+mov eax,one
+call sprintLF
+
+mov ecx, name
+mov edx, 64
+call sread
+
+mov ecx, 0777o
+mov ebx, filename
+mov eax, 8
+int 80h
+
+mov ecx, 2
+mov ebx, filename
+mov eax, 5
+int 80h
+
+mov eax, 4
+mov ebx,eax
+mov ecx,msg
+int 80h
+
+mov ebx,esi
+mov eax,6
+int 80h
+call quit
+ </code></pre>
+<h1 id="выводы">4 Выводы</h1>
+<p>При выполнение лабораторной работы, я приобрела навыки написания
+программ для работы с файлами.</p>
+<h1 id="список-литературы">5 Список литературы</h1>
+<p><a
+href="https://esystem.rudn.ru/pluginfile.php/2089097/mod_resource/content/0/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%E2%84%9610.%20%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D0%BC%D0%B8%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B0%D0%BC%D0%B8%20Nasm.pdf">Архитектура
+ЭВМ</a></p>
